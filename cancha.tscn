@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://be54pamfhm0tu"]
+
+[sub_resource type="Theme" id="Theme_uv558"]
+
+[node name="Cancha" type="Node2D" unique_id=780613846]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=241038262]
+offset_left = 22.0
+offset_top = 8.0
+offset_right = 533.0
+offset_bottom = 309.0
+theme = SubResource("Theme_uv558")
+color = Color(0.18778163, 0.12406213, 0.33528385, 0)
