@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cvcxvmggo1yiw"]
+
+[ext_resource type="Script" uid="uid://dnoe72vxykw3t" path="res://paleta_izquierda.gd" id="1_k12mm"]
+[ext_resource type="Script" uid="uid://bkushmej68f7m" path="res://paleta_derecha.gd" id="2_g76pc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73auc"]
+size = Vector2(15, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8lke"]
+size = Vector2(17, 72)
+
+[node name="Raiz" type="Node2D" unique_id=1933478336]
+
+[node name="Player1" type="Node2D" parent="." unique_id=1733630657]
+
+[node name="paleta_izquierda" type="CharacterBody2D" parent="Player1" unique_id=1957103500]
+position = Vector2(59, 296)
+script = ExtResource("1_k12mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/paleta_izquierda" unique_id=316386751]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_73auc")
+
+[node name="Paleta1" type="ColorRect" parent="Player1/paleta_izquierda" unique_id=2015732535]
+offset_left = -10.0
+offset_top = -41.0
+offset_right = 8.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player2" type="Node2D" parent="." unique_id=1904920353]
+position = Vector2(948, 285)
+
+[node name="paleta_derecha" type="CharacterBody2D" parent="Player2" unique_id=465724600]
+position = Vector2(1, 1)
+script = ExtResource("2_g76pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/paleta_derecha" unique_id=570144934]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_t8lke")
+
+[node name="Paleta2" type="ColorRect" parent="Player2/paleta_derecha" unique_id=260824922]
+offset_left = -10.0
+offset_top = -39.0
+offset_right = 7.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true

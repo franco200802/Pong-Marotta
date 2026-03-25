@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://cvcxvmggo1yiw"]
+
+[ext_resource type="Script" uid="uid://dnoe72vxykw3t" path="res://Paleta1.gd" id="1_k12mm"]
+[ext_resource type="Script" uid="uid://bkushmej68f7m" path="res://Paleta2.gd" id="2_g76pc"]
+[ext_resource type="Script" uid="uid://dphemc0ndhgyl" path="res://pelota.gd" id="2_k12mm"]
+[ext_resource type="Script" uid="uid://c1wxpf7qbq6b4" path="res://menu_pausa.gd" id="4_tl684"]
+[ext_resource type="Script" uid="uid://cq8clphnykuji" path="res://ui.gd" id="5_apd2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73auc"]
+size = Vector2(15, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8lke"]
+size = Vector2(17, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k12mm"]
+radius = 28.071337
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g76pc"]
+size = Vector2(1163, 20)
+
+[node name="Raiz" type="Node2D" unique_id=1933478336]
+
+[node name="Player1" type="Node2D" parent="." unique_id=1733630657]
+
+[node name="Paleta1" type="CharacterBody2D" parent="Player1" unique_id=1957103500]
+unique_name_in_owner = true
+position = Vector2(59, 296)
+script = ExtResource("1_k12mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Paleta1" unique_id=316386751]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_73auc")
+
+[node name="Paleta1" type="ColorRect" parent="Player1/Paleta1" unique_id=2015732535]
+offset_left = -10.0
+offset_top = -41.0
+offset_right = 8.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player2" type="Node2D" parent="." unique_id=1904920353]
+position = Vector2(1059, 292)
+
+[node name="Paleta2" type="CharacterBody2D" parent="Player2" unique_id=465724600]
+unique_name_in_owner = true
+position = Vector2(1, 1)
+script = ExtResource("2_g76pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Paleta2" unique_id=570144934]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_t8lke")
+
+[node name="Paleta2" type="ColorRect" parent="Player2/Paleta2" unique_id=260824922]
+offset_left = -10.0
+offset_top = -39.0
+offset_right = 7.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Pelota" type="Node2D" parent="." unique_id=212143333]
+
+[node name="Pelota" type="CharacterBody2D" parent="Pelota" unique_id=1217095629]
+unique_name_in_owner = true
+position = Vector2(575, 313)
+script = ExtResource("2_k12mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pelota/Pelota" unique_id=179118648]
+position = Vector2(20, 21)
+shape = SubResource("CircleShape2D_k12mm")
+
+[node name="ColorRect" type="ColorRect" parent="Pelota/Pelota" unique_id=587738703]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BordeSuperior" type="StaticBody2D" parent="." unique_id=624158661]
+position = Vector2(9, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeSuperior" unique_id=636289268]
+position = Vector2(573, 0)
+shape = SubResource("RectangleShape2D_g76pc")
+
+[node name="BordeInferior" type="StaticBody2D" parent="." unique_id=1158634473]
+position = Vector2(47, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeInferior" unique_id=1301973661]
+position = Vector2(533, 645)
+shape = SubResource("RectangleShape2D_g76pc")
+
+[node name="MenuPausa" type="CanvasLayer" parent="." unique_id=1006539695]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("4_tl684")
+
+[node name="ColorRect" type="ColorRect" parent="MenuPausa" unique_id=860530799]
+offset_left = 493.0
+offset_top = 56.0
+offset_right = 697.0
+offset_bottom = 288.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.38431373)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPausa" unique_id=1473690020]
+offset_left = 519.0
+offset_top = 131.0
+offset_right = 674.0
+offset_bottom = 281.0
+mouse_filter = 2
+
+[node name="BtnPlay" type="Button" parent="MenuPausa/VBoxContainer" unique_id=600596588]
+layout_mode = 2
+text = "Play"
+
+[node name="BtnReiniciar" type="Button" parent="MenuPausa/VBoxContainer" unique_id=251659477]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="BtnModo" type="Button" parent="MenuPausa/VBoxContainer" unique_id=1739368046]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cambiar modo"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1811555954]
+script = ExtResource("5_apd2t")
+
+[node name="Puntos1" type="Label" parent="UI" unique_id=505057991]
+unique_name_in_owner = true
+offset_left = 507.0
+offset_top = 22.0
+offset_right = 573.0
+offset_bottom = 45.0
+text = "Player 1:"
+
+[node name="Puntos2" type="Label" parent="UI" unique_id=1898993915]
+unique_name_in_owner = true
+offset_left = 621.0
+offset_top = 23.0
+offset_right = 683.0
+offset_bottom = 46.0
+text = "Player2:"
+
+[node name="Tiempo" type="Label" parent="UI" unique_id=143834686]
+unique_name_in_owner = true
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 74.0
+offset_bottom = 56.0
+text = "Time:"
+
+[connection signal="pressed" from="MenuPausa/VBoxContainer/BtnPlay" to="MenuPausa" method="_on_btn_play_pressed"]
+[connection signal="pressed" from="MenuPausa/VBoxContainer/BtnReiniciar" to="MenuPausa" method="_on_btn_reiniciar_pressed"]
+[connection signal="pressed" from="MenuPausa/VBoxContainer/BtnModo" to="MenuPausa" method="_on_btn_modo_pressed"]
